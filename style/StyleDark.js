@@ -21,7 +21,7 @@ const style = StyleSheet.create(
         button: {
             backgroundColor: colors.BaseSlot1,
             height: 60,
-            width: "90%",
+            width: "100%",
             borderRadius: 10,
             alignSelf: "center",
             justifyContent: "center",
@@ -32,7 +32,7 @@ const style = StyleSheet.create(
         },
         button2: {
             height: 60,
-            width: "90%",
+            width: "100%",
             borderRadius: 10,
             alignSelf: "center",
             borderColor: colors.BaseSlot4,

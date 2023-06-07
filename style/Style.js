@@ -27,6 +27,15 @@ const style = StyleSheet.create(
             justifyContent: "center",
             alignItems: "center"
         },
+        buttonTrip: {
+            backgroundColor: colors.BaseSlot2,
+            height: 60,
+            width: "100%",
+            borderRadius: 10,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center"
+        },
         textbutton: {
             color: 'white',
         },
@@ -52,10 +61,13 @@ const style = StyleSheet.create(
 
         },
 
-        //text
         textNormal18: {
             fontSize: 18,
             fontWeight: 500
+        },
+        textNormal20:{
+            fontSize: 20,
+            fontWeight: 700
         }
     }
 )

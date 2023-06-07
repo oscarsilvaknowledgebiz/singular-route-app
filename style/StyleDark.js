@@ -18,10 +18,32 @@ const style = StyleSheet.create(
             fontSize: 24,
             fontWeight: 600
         },
+        textNormal20:{
+            fontSize: 20,
+            fontWeight: 700
+        },
         button: {
             backgroundColor: colors.BaseSlot1,
             height: 60,
-            width: "90%",
+            width: "100%",
+            borderRadius: 10,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        buttonTrip: {
+            backgroundColor: colors.BaseSlot2,
+            height: 60,
+            width: "100%",
+            borderRadius: 10,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        button: {
+            backgroundColor: colors.BaseSlot1,
+            height: 60,
+            width: "100%",
             borderRadius: 10,
             alignSelf: "center",
             justifyContent: "center",
@@ -32,7 +54,7 @@ const style = StyleSheet.create(
         },
         button2: {
             height: 60,
-            width: "90%",
+            width: "100%",
             borderRadius: 10,
             alignSelf: "center",
             borderColor: colors.BaseSlot4,
@@ -51,11 +73,14 @@ const style = StyleSheet.create(
             width: '100%',
 
         },
-
-        //text
         textNormal18: {
             fontSize: 18,
             fontWeight: 500
+        },
+        LocationImage:{
+            width: 225,
+            height: 170,
+            bottom: 90
         }
     }
 )

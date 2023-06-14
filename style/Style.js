@@ -27,6 +27,15 @@ const style = StyleSheet.create(
             justifyContent: "center",
             alignItems: "center"
         },
+        ButtonChoicePrimary: {
+            backgroundColor: colors.BaseSlot1,
+            height: 24,
+            width: 76,
+            borderRadius: 10,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center"
+        },
         textbutton: {
             color: 'white',
         },
@@ -56,6 +65,10 @@ const style = StyleSheet.create(
         textNormal18: {
             fontSize: 18,
             fontWeight: 500
+        },
+        textNormal20: {
+            fontSize: 20,
+            fontWeight: 700
         }
     }
 )

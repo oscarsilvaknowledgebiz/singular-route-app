@@ -58,7 +58,7 @@ export default function ProfileScreen1({ route, navigation }) {
   const handleSignIn = () => {
     if (selectedButton) {
       // Only navigate to the next page if a button is selected
-      console.log("go")
+      navigation.navigate('ProfileScreen2');
     }
   };
 

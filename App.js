@@ -7,13 +7,14 @@ import Register from './src/view/Register';
 import Login from './src/view/Login';
 import ProfileScreen1 from './src/view/ProfileScreen1';
 import ProfileScreen2 from './src/view/ProfileScreen2';
+import ProfileScreen3 from './src/view/ProfileScreen3';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ProfileScreen2' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='ProfileScreen3' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={Register} options={{
           headerShown: true,
@@ -28,6 +29,10 @@ export default function App() {
           headerTitle: ""
         }} />
         <Stack.Screen name="ProfileScreen2" component={ProfileScreen2} options={{
+          headerShown: true,
+          headerTitle: ""
+        }} />
+        <Stack.Screen name="ProfileScreen3" component={ProfileScreen3} options={{
           headerShown: true,
           headerTitle: ""
         }} />

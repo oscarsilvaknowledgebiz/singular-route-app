@@ -11,7 +11,7 @@ const style = StyleSheet.create(
             fontWeight: 400
         },
         textNormal20: {
-            fontSize: 16,
+            fontSize: 20,
             fontWeight: 700
         },
         textNormal32: {

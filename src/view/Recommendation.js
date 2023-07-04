@@ -14,7 +14,7 @@ import style from '../../style/Style';
 import styleDark from '../../style/StyleDark';
 import * as NavigationBar from 'expo-navigation-bar';
 import Loader from '../components/Loader';
-import EventCard from '../components/EventCard'
+import EventCard from '../components/EventCard';
 
 export default function Recommendation({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,7 +67,7 @@ export default function Recommendation({ route, navigation }) {
   }
 
   return (
-    <SafeAreaView style={[styleSelected.backgroundPrimary, { flex: 1 }]} onLayout={onLayoutRootView}>
+    <SafeAreaView style={[ {backgroundColor: colors.BaseSlot3, flex: 1 }]} onLayout={onLayoutRootView}>
       <StatusBar
         translucent={true}
         backgroundColor={'transparent'}
@@ -79,19 +79,17 @@ export default function Recommendation({ route, navigation }) {
         behavior={Platform.OS == 'android' ? 'height' : 'padding'}
         keyboardVerticalOffset={Platform.OS == 'android' ? -150 : -150}
       >
-        <View style={[styleSelected.backgroundPrimary, { flex: 1 }]}>
+        <View style={[ {backgroundColor: colors.BaseSlot3, flex: 1 }]}>
           <Text style={[styleSelected.textNormal20, { textAlign: 'center' }]}>Recommendation</Text>
-          <Text style={[styleSelected.textNormal12, { marginTop: 35 }]}>
+          <Text style={[styleSelected.textNormal12, { marginTop: 35, padding: 22 }]}>
             Based on your reviews of your latest visits, you might like:
           </Text>
-        </View>
-      
-          <ScrollView style={{ marginLeft: 20, marginTop: 0, zIndex: -5 }}>
-            <View style={{ marginLeft: -20, marginBottom: 20, height: '100%' }}>
-                <EventCard />
+          <ScrollView style={{ flex: 1, marginLeft: 20, marginTop: 0 }}>
+            <View style={{ marginLeft: -20, marginBottom: 20 }}>
+              <EventCard />
             </View>
           </ScrollView>
-   
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

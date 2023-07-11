@@ -207,7 +207,7 @@ export default function BasicFilters({ route, navigation }) {
       >
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 10 }}>
-            <InputDefaultBasicFilters input={searchfor} setInput={setSearchfor} />
+            <InputDefaultBasicFilters input={searchfor} setInput={setSearchfor} placeholder={"Search for..."} />
             <View style={{ flexDirection: 'row' }}>
               <Image
                 style={[styleSelected.search_not_menu, { marginLeft: 'auto', bottom: 35, marginRight: 10 }]}

@@ -1,80 +1,89 @@
 import React, { useState } from 'react';
-  import { View, Text, Image, useColorScheme, TouchableOpacity } from 'react-native';
-  import style from '../../style/Style';
-  import styleDark from '../../style/StyleDark';
+import { View, Text, Image, useColorScheme, TouchableOpacity } from 'react-native';
+import style from '../../style/Style';
+import styleDark from '../../style/StyleDark';
 
-  const EventCard = ({ selectedButton }) => {
-    const colorScheme = useColorScheme();
-    const styleSelected = colorScheme === 'light' ? style : styleDark;
-    const colors = require('../../style/Colors.json');
+const EventCard = ({ selectedButton }) => {
+  const colorScheme = useColorScheme();
+  const styleSelected = colorScheme === 'light' ? style : styleDark;
+  const colors = require('../../style/Colors.json');
 
-    const events = [
-      {
-        id: 1,
-        title: 'asdasdasdasd',
-        date: 'June 1, 2023',
-        location: 'Lisboa',
-        imageSource: require('../../assets/images/RocknRio.png'),
-        category: 'Show',
-      },
-      {
-        id: 2,
-        title: 'a',
-        date: 'June 2, 2023',
-        location: 'Los Angeles',
-        imageSource: require('../../assets/images/maneskin.png'),
-        category: 'Culture',
-      },
-      {
-        id: 3,
-        title: 'Sample event 2',
-        date: 'June 2, 2023',
-        location: 'Los Angeles',
-        imageSource: require('../../assets/images/maneskin.png'),
-        category: 'Culture',
-      },
-      {
-        id: 4,
-        title: 'Sample Event 2',
-        date: 'June 2, 2023',
-        location: 'Los Angeles',
-        imageSource: require('../../assets/images/maneskin.png'),
-        category: 'Culture',
-      },
-      {
-        id: 5,
-        title: 'Sample Event 2',
-        date: 'June 2, 2023',
-        location: 'Los Angeles',
-        imageSource: require('../../assets/images/maneskin.png'),
-        category: 'Culture',
-      },
-      // Add more events as needed
-    ];
+  const events = [
+    {
+      id: 1,
+      title: 'asdasdasdasd',
+      date: 'June 1, 2023',
+      location: 'Lisboa',
+      imageSource: require('../../assets/images/RocknRio.png'),
+      category: 'Show',
+    },
+    {
+      id: 2,
+      title: 'a',
+      date: 'June 2, 2023',
+      location: 'Los Angeles',
+      imageSource: require('../../assets/images/maneskin.png'),
+      category: 'Culture',
+    },
+    {
+      id: 3,
+      title: 'Sample event 2',
+      date: 'June 2, 2023',
+      location: 'Los Angeles',
+      imageSource: require('../../assets/images/maneskin.png'),
+      category: 'Culture',
+    },
+    {
+      id: 4,
+      title: 'Sample Event 2',
+      date: 'June 2, 2023',
+      location: 'Los Angeles',
+      imageSource: require('../../assets/images/maneskin.png'),
+      category: 'Culture',
+    },
+    {
+      id: 5,
+      title: 'Sample Event 2',
+      date: 'June 2, 2023',
+      location: 'Los Angeles',
+      imageSource: require('../../assets/images/maneskin.png'),
+      category: 'Culture',
+    },
+    {
+      id: 6,
+      title: 'Sample Event 2',
+      date: 'June 2, 2023',
+      location: 'Los Angeles',
+      imageSource: require('../../assets/images/maneskin.png'),
+      category: 'Culture',
+    },
+    // Add more events as needed
+  ];
 
-    const [likedEvents, setLikedEvents] = useState([]);
 
-    const filteredEvents = selectedButton ? events.filter((event) => event.category === selectedButton) : events;
-    const eventCount = filteredEvents.length;
+  const [likedEvents, setLikedEvents] = useState([]);
 
-    const handleLike = (event) => {
-      if (likedEvents.includes(event.id)) {
-        setLikedEvents(likedEvents.filter((eventId) => eventId !== event.id));
-        console.log('Unfavorited event:', event);
-      } else {
-        setLikedEvents([...likedEvents, event.id]);
-        console.log('Favorited event:', event);
-      }
-    };
+  const filteredEvents = selectedButton ? events.filter((event) => event.category === selectedButton) : events;
+  const eventCount = filteredEvents.length;
 
-    const handleShare = (event) => {
-      // Implement your share functionality here
-      console.log('Share event:', event);
-    };
+  const handleLike = (event) => {
+    if (likedEvents.includes(event.id)) {
+      setLikedEvents(likedEvents.filter((eventId) => eventId !== event.id));
+      console.log('Unfavorited event:', event);
+    } else {
+      setLikedEvents([...likedEvents, event.id]);
+      console.log('Favorited event:', event);
+    }
+  };
 
-    const eventComponents = filteredEvents.map((event) => (
+  const handleShare = (event) => {
+    // Implement your share functionality here
+    console.log('Share event:', event);
+  };
+
+  const eventComponents = filteredEvents.map((event) => (
+    <TouchableOpacity key={event.id} onPress={() => console.log('Clicked event:', event)}>
       <View
-        key={event.id}
         style={{ height: 90, backgroundColor: colors.BaseSlot3, marginLeft: 20, marginTop: 20 }}
       >
         <View style={{ backgroundColor: 'white', width: 90 }}>
@@ -92,7 +101,7 @@ import React, { useState } from 'react';
             <View style={{ flex: 1 }}>
               <Text style={[styleSelected.textNormal16, { fontWeight: 700, marginLeft: 100 }]} numberOfLines={2}>{event.title}</Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 'auto' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 'auto',  zIndex: 1 }}>
               <TouchableOpacity onPress={() => handleLike(event)}>
                 <Image
                   style={[
@@ -128,21 +137,19 @@ import React, { useState } from 'react';
           </View>
         </View>
       </View>
-    ));
+    </TouchableOpacity>
+  ));
     
-    
-    
-    
-
-    return (
-      <View>
-        <View style={{ padding: 10, flexDirection: 'row', marginLeft: 10 }}>
-          <Text style={[styleSelected.textNormal12, { fontWeight: 700, left: 0 }]}>
-            {selectedButton ? `${eventCount} ${selectedButton}` : `${eventCount} Results`}
-          </Text>
-        </View>
-        {eventComponents}
+  return (
+    <View>
+      <View style={{ padding: 10, flexDirection: 'row', marginLeft: 10 }}>
+        <Text style={[styleSelected.textNormal12, { fontWeight: 700, left: 0 }]}>
+          {selectedButton ? `${eventCount} ${selectedButton}` : `${eventCount} Results`}
+        </Text>
       </View>
-    );
-  }
-  export default EventCard;
+      {eventComponents}
+    </View>
+  );
+};
+
+export default EventCard;

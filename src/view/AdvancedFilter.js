@@ -112,7 +112,7 @@ export default function AdvancedFilter({ route, navigation }) {
             >
                 <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
                     <Text style={[styleSelected.textNormal20, { textAlign: 'center' }]}>Filters</Text>
-                    <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
+                    <View style={{ backgroundColor: colors.BaseSlot3, flex: 1, padding: 10  }}>
                         <Text style={[styleSelected.textNormal12, { marginTop: 10 }]}>Today I would like...</Text>
                         <View style={{ flex: 1, backgroundColor: colors.BaseSlot3, marginTop: 10 }}>
                             <View style={{ backgroundColor: colors.BaseSlot3, marginRight: 'auto', height: 150 }}>
@@ -140,7 +140,7 @@ export default function AdvancedFilter({ route, navigation }) {
                         </View>
                     </View>
                 </View>
-                <View style={{ backgroundColor: colors.BaseSlot3, flex: 1, marginTop: 60 }}>
+                <View style={{ backgroundColor: colors.BaseSlot3, flex: 1, marginTop: 70, padding: 10  }}>
                     <Text style={styleSelected.textNormal12}>What kind of event?</Text>
                     <View style={{ flex: 1, backgroundColor: colors.BaseSlot3, marginTop: 10 }}>
                         <View style={{ backgroundColor: colors.BaseSlot3, marginRight: 'auto', height: 150 }}>
@@ -163,7 +163,7 @@ export default function AdvancedFilter({ route, navigation }) {
 
                     </View>
                 </View>
-                <View style={{ backgroundColor: colors.BaseSlot3, flex: 1, marginTop: -20 }}>
+                <View style={{ backgroundColor: colors.BaseSlot3, flex: 1, marginTop: -20, padding: 10 }}>
                     <Text style={styleSelected.textNormal12}>Languages</Text>
                     <View style={{ flex: 1, backgroundColor: colors.BaseSlot3 }}>
                         <View style={{ backgroundColor: colors.BaseSlot3, marginRight: 'auto', height: 150, marginTop: 10 }}>

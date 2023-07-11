@@ -33,17 +33,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     borderRadius: 10,
-    borderColor:'white',
-    borderWidth: 1,
-    backgroundColor: Colors.BaseSlot1,
+    borderColor:Colors.BaseSlot1,
+    borderWidth: 0.5,
+    backgroundColor: '#FFFBFB',
     width: 170, // Increase the width of the button
     paddingHorizontal: 10, // Add padding to the left and right of the button
     minWidth: 80, // Set a minimum width for the button
     marginLeft: 20
   },
   selectedButton: {
-    borderColor: Colors.BaseSlot1,
-    backgroundColor: 'white'
+    borderColor: 'white',
+    backgroundColor: Colors.BaseSlot1
   },
   label: {
     color: 'black',

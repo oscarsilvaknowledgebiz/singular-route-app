@@ -134,7 +134,6 @@ const style = StyleSheet.create(
             fontSize: 14
         },
         resetButton: {
-            backgroundColor: colors.BaseSlot1,
             height: 60,
             width: "30%",
             borderRadius: 10,

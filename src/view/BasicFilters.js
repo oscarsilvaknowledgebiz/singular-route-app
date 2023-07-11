@@ -12,6 +12,8 @@ import {
   Image,
   FlatList,
   Modal,
+  Animated,
+  Easing
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import InputDefaultBasicFilters from '../components/InputDefaultBasicFilters';
@@ -26,6 +28,7 @@ import ButtonFilter from '../components/ButtonFilter';
 import ButtonFilterPrimary from '../components/ButtonFilterPrimary';
 import SelectableButton from '../components/SelectableButton';
 import EventCard from '../components/EventCard';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function BasicFilters({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -136,7 +139,16 @@ export default function BasicFilters({ route, navigation }) {
 
   const handleDropdownPress = () => {
     setIsDropdownOpen(!isDropdownOpen);
+
+    Animated.timing(dropdownAnimationValue, {
+      toValue: isDropdownOpen ? 0 : 1,
+      duration: 300,
+      easing: Easing.ease,
+      useNativeDriver: true,
+    }).start();
   };
+
+  const [dropdownAnimationValue] = useState(new Animated.Value(0));
 
   const handleButtonPress = (label) => {
     if (selectedButton === label) {
@@ -148,7 +160,7 @@ export default function BasicFilters({ route, navigation }) {
       console.log(`${label} has been selected`);
     }
   };
-  
+
 
   const handleResetButtonPress = () => {
     setSelectedButton(null);
@@ -216,18 +228,22 @@ export default function BasicFilters({ route, navigation }) {
                 showsVerticalScrollIndicator={false}
               >
                 <Modal visible={isDropdownOpen} animationType="slide" transparent={true}>
-                  <View style={[styleSelected.dropdownContainer, isDropdownOpen && { backgroundColor: colors.BaseSlot1 }]}>
+                  <Animated.View
+                    style={[
+                      styleSelected.dropdownContainer,
+                      isDropdownOpen && { backgroundColor: '#FFFBFB', opacity: dropdownAnimationValue },
+                    ]}
+                  >
                     {isDropdownOpen && (
                       <TouchableOpacity style={styleSelected.resetButton} onPress={() => setIsDropdownOpen(false)}>
-                        <Icon name="close" size={16} color="white"></Icon>
+                        <Icon name="close" size={16} color="#FFCD01" />
                       </TouchableOpacity>
                     )}
                     <ScrollView showsHorizontalScrollIndicator={false}>
-                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, }]}>
-                        <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 90 }} />
+                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, color: colors.BaseSlot2 }]}>
+                        <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 5 }} />
                         History
                       </Text>
-
                       {filterButtons
                         .filter((button) => button.category === 'History')
                         .map((button) => (
@@ -238,7 +254,7 @@ export default function BasicFilters({ route, navigation }) {
                             selected={selectedButton === button.label}
                           />
                         ))}
-                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, }]}>
+                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, color: colors.BaseSlot2 }]}>
                         <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 90 }} />
                         Culture
                       </Text>
@@ -252,7 +268,7 @@ export default function BasicFilters({ route, navigation }) {
                             selected={selectedButton === button.label}
                           />
                         ))}
-                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, }]}>
+                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, color: colors.BaseSlot2 }]}>
                         <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 90 }} />
                         Religion
                       </Text>
@@ -266,7 +282,7 @@ export default function BasicFilters({ route, navigation }) {
                             selected={selectedButton === button.label}
                           />
                         ))}
-                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, }]}>
+                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, color: colors.BaseSlot2 }]}>
                         <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 90 }} />
                         Amusement
                       </Text>
@@ -281,7 +297,7 @@ export default function BasicFilters({ route, navigation }) {
                           />
                         ))}
 
-                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, }]}>
+                      <Text style={[styleSelected.textNormal12, { marginLeft: 20, fontWeight: 700, color: colors.BaseSlot2 }]}>
                         <Icon name="history" size={12} color={styleSelected.textColor} style={{ marginRight: 90 }} />
                         Others
                       </Text>
@@ -296,7 +312,7 @@ export default function BasicFilters({ route, navigation }) {
                           />
                         ))}
                     </ScrollView>
-                  </View>
+                  </Animated.View>
                 </Modal>
               </ScrollView>
             </View>

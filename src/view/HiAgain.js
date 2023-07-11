@@ -53,7 +53,7 @@ export default function HiAgain({ route, navigation }) {
                 keyboardVerticalOffset={Platform.OS == 'android' ? -150 : -150}
             >
                 <View style={[{ flex: 1, backgroundColor: colors.BaseSlot3, marginTop: Platform.OS == "android" ? 0 : 0, marginLeft: 20, marginRight: 20 }]}>
-                    <Text style={styleSelected.textNormal24}>Hi Again</Text>
+                    <Text style={[styleSelected.textNormal24, {paddingLeft: 20}]}>Hi Again</Text>
                     <View style={{ flex: .4, justifyContent: "space-evenly" }}>
                         <InputDefault placeholder={"Email address"} input={email} setInput={setEmail} />
                         <InputDefault placeholder={"Create password"} input={password} setInput={setPassword} />

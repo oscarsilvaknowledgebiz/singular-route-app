@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Animated, Text, View, useColorScheme } from "react-native";
 import { TextInput } from "react-native";
-import style from "../../style/Style";
-import styleDark from "../../style/StyleDark";
+import style from "../../../style/Style";
+import styleDark from "../../../style/StyleDark";
 import { Fontisto } from "@expo/vector-icons";
 import MaskInput from "react-native-mask-input";
 
@@ -19,7 +19,7 @@ export default function InputDefault({
 }) {
     const [focus, setFocus] = useState(false);
     const [showSecureText, setShowSecureText] = useState(true);
-    const colors = require("../../style/Colors.json");
+    const colors = require("../../../style/Colors.json");
     let colorScheme = useColorScheme();
     var styleSelected = colorScheme == "light" ? style : styleDark;
 
@@ -83,7 +83,7 @@ export default function InputDefault({
                 height: 40,
                 justifyContent: "flex-end",
                 paddingBottom: 5,
-                paddingLeft: 14,
+                paddingLeft: 3,
                 width: "95%",
                 alignSelf: "center",
                 margin: 10
@@ -101,7 +101,7 @@ export default function InputDefault({
                     ],
                 }}
             >
-                <Animated.Text
+                {/* <Animated.Text
                     style={{
                         fontFamily: "Nunito-Regular",
                         alignSelf: "flex-start",
@@ -120,7 +120,7 @@ export default function InputDefault({
                     }}
                 >
                     {placeholder}
-                </Animated.Text>
+                </Animated.Text> */}
             </Animated.View>
 
             {
@@ -128,6 +128,7 @@ export default function InputDefault({
                     <TextInput
                         value={input}
                         keyboardType={keyboardType}
+                        placeholder={placeholder}
                         secureTextEntry={secureTextEntry ? showSecureText : false}
                         onFocus={(value) => {
                             typeof (onFocus) == "function" ? onFocus(value) : null
@@ -176,7 +177,7 @@ export default function InputDefault({
                         textAlign={"left"}
                         keyboardAppearance={colorScheme == "dark" ? "dark" : "light"}
                         keyboardType={keyboardType}
-                        placeholder=""
+                        placeholder={placeholder}
                         onEndEditing={(value) => {
                             typeof (onEndEditing) == "function" ? onEndEditing(value) : null
                             setFocus(false)

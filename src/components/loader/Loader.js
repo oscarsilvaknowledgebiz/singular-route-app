@@ -5,7 +5,7 @@ import { View } from "react-native";
 
 export default function Loader() {
 
-    const colors = require("../../style/Colors.json")
+    const colors = require("../../../style/Colors.json")
 
     return (
         <View style={{
@@ -22,7 +22,7 @@ export default function Loader() {
                     height: 200,
                     backgroundColor: '#eee',
                 }}
-                source={require('../../assets/json/loader-app.json')}
+                source={require('../../../assets/json/loader-app.json')}
             />
         </View>
     )

@@ -151,6 +151,7 @@ const MapaConfig = () => {
         />
       ))}
     </Svg>
+    
   );
 };
 

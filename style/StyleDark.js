@@ -18,7 +18,7 @@ const style = StyleSheet.create(
             fontSize: 24,
             fontWeight: 600
         },
-        textNormal14:{
+        textNormal14: {
             fontSize: 14,
             fontWeight: 400,
             fontFamily: 'Inter'
@@ -61,7 +61,7 @@ const style = StyleSheet.create(
             fontSize: 18,
             fontWeight: 500
         },
-        textNormal20:{
+        textNormal20: {
             fontSize: 20,
             fontWeight: 700
         },
@@ -74,9 +74,62 @@ const style = StyleSheet.create(
             width: '100%',
             height: '100%',
         },
-        ScrollView:{
+        ScrollView: {
             marginHorizontal: 0
+        },
+        search_not_menu: {
+            width: 16,
+            height: 16
+        },
+        buttonfilter: {
+            width: 63,
+            height: 28,
+            backgroundColor: '#F0F0F0',
+            borderRadius: 5,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginRight: 9
+        },
+        textNormalFilter: {
+            fontSize: 12,
+            fontWeight: 400
+        },
+        buttonfilterprimary: {
+            width: 63,
+            height: 28,
+            backgroundColor: colors.BaseSlot1,
+            borderRadius: 5,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginRight: 12
+        },
+        generalImage: {
+            width: 90,
+            height: 90
+        },
+        map_pin: {
+            width: 10,
+            height: 12
+        },
+        heart_fav: {
+            width: 18,
+            height: 16
+        },
+        share: {
+            width: 18,
+            height: 18
+        },
+        dropdown: {
+            height: 16,
+            width: 16
+        },
+        seperator: {
+            height: 1,
+            width: '100%',
+            backgroundColor: '#E9E9E9',
+            dotted: 9
         }
+
     }
 )
 

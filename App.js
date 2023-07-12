@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './src/view/WelcomeScreen';
 import Register from './src/view/Register';
 import Login from './src/view/Login';
+import AdvancedFilter from './src/view/AdvancedFilter';
 import ForgotPasswordEmail from './src/view/ForgotPasswordEmail';
 import ForgotPasswordCode from './src/view/ForgotPasswordCode';
 import ForgotPasswordNewPassword from './src/view/ForgotPasswordNewPassword';
@@ -15,7 +16,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='WelcomeScreen' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='AdvancedFilter' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={Register} options={{
           headerShown: true,
@@ -41,6 +42,23 @@ export default function App() {
           headerShown: true,
           headerTitle: ""
         }} />
+<Stack.Screen name="AdvancedFilter" component={AdvancedFilter} options={{
+
+
+
+
+
+
+
+
+
+
+
+
+          headerShown: true,
+          headerTitle: ""
+        }} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -76,7 +76,10 @@ const style = StyleSheet.create(
         },
         ScrollView:{
             marginHorizontal: 0
-        }
+        },
+checkbox: {
+            margin: 5
+          },
     }
 )
 

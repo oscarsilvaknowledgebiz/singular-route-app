@@ -3,10 +3,10 @@ import { SafeAreaView, StatusBar, Appearance, useColorScheme, Platform, Keyboard
 import style from '../../style/Style'
 import styleDark from '../../style/StyleDark'
 import * as NavigationBar from 'expo-navigation-bar'
-import * as SplashScreen from 'expo-splash-screen';
-import Loader from '../components/Loader'
-import ButtonPrimary from '../components/ButtonPrimary'
-import ButtonSecondary from '../components/ButtonSecondary'
+
+import Loader from '../components/loader/Loader'
+import ButtonPrimary from '../components/buttons/ButtonPrimary'
+import ButtonSecondary from '../components/buttons/ButtonSecondary'
 
 export default function WelcomeScreen({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)

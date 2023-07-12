@@ -1,18 +1,19 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { SafeAreaView, StatusBar, Appearance, useColorScheme, Platform, KeyboardAvoidingView, View, Text, Image, ScrollView } from 'react-native'
-import style from '../../style/Style'
-import styleDark from '../../style/StyleDark'
+import style from '../../../style/Style'
+import styleDark from '../../../style/StyleDark'
 import * as NavigationBar from 'expo-navigation-bar'
-import * as SplashScreen from 'expo-splash-screen';
-import Loader from '../components/Loader'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import ButtonPrimary from '../components/ButtonPrimary'
+
+import Loader from '../../components/loader/Loader';
+import ButtonPrimary from '../../components/buttons/ButtonPrimary'
+
 
 export default function EventDetails({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
-    var colors = require('../../style/Colors.json')
+    var colors = require('../../../style/Colors.json')
 
     useEffect(() => {
         console.log('OPEN', EventDetails.name, 'SCREEN')
@@ -54,7 +55,7 @@ export default function EventDetails({ route, navigation }) {
                         <View style={{ flex: 1, backgroundColor: '#B9314F' }}>
                             <Image
                                 style={styleSelected.EventImage}
-                                source={require('../../assets/images/ImageExampleEvent.png')}
+                                source={require('../../../assets/images/ImageExampleEvent.png')}
                                 placeholder="image"
                                 contentFit="cover"
                                 transition={1000}
@@ -63,7 +64,7 @@ export default function EventDetails({ route, navigation }) {
                     </View>
                     <View style={{ backgroundColor: colors.BaseSlot3, height: 90, flexDirection: 'row', marginTop: 20 }}>
                         <View style={{ width: 50, height: '100%', alignItems: 'center' }}>
-                            <Image source={require("../../assets/images/calendar.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
+                            <Image source={require("../../../assets/images/calendar.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
                         </View>
                         <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
                             <Text style={[styleSelected.textNormal16, { fontWeight: '700' }]}>Mon, Apr 18 · 21:00 Pm</Text>
@@ -75,7 +76,7 @@ export default function EventDetails({ route, navigation }) {
                     </View>
                     <View style={{ backgroundColor: colors.BaseSlot3, height: 90, flexDirection: 'row' }}>
                         <View style={{ width: 50, height: '100%', alignItems: 'center' }}>
-                            <Image source={require("../../assets/images/pin.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
+                            <Image source={require("../../../assets/images/pin.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
                         </View>
                         <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
                             <Text style={[styleSelected.textNormal16, { fontWeight: '700' }]}>Palau Sant Jordi</Text>
@@ -87,7 +88,7 @@ export default function EventDetails({ route, navigation }) {
                     </View>
                     <View style={{ backgroundColor: colors.BaseSlot3, height: 90, flexDirection: 'row' }}>
                         <View style={{ width: 50, height: '100%', alignItems: 'center' }}>
-                            <Image source={require("../../assets/images/time.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
+                            <Image source={require("../../../assets/images/time.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
                         </View>
                         <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
                             <Text style={[styleSelected.textNormal16, { fontWeight: '700' }]}>Average time</Text>
@@ -96,7 +97,7 @@ export default function EventDetails({ route, navigation }) {
                     </View>
                     <View style={{ backgroundColor: colors.BaseSlot3, height: 90, flexDirection: 'row', marginTop: -20 }}>
                         <View style={{ width: 50, height: '100%', alignItems: 'center' }}>
-                            <Image source={require("../../assets/images/dollar.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
+                            <Image source={require("../../../assets/images/dollar.png")} style={{ height: 25, width: 25, }} resizeMode='contain' />
                         </View>
                         <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
                             <Text style={[styleSelected.textNormal16, { fontWeight: '700' }]}>Refund Policy</Text>
@@ -107,19 +108,19 @@ export default function EventDetails({ route, navigation }) {
                         <Text style={[styleSelected.textNormal16, { textAlign: 'center', fontWeight: 700 }]} >Classification</Text>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
                             <TouchableOpacity onPress={() => { console.log("Pressed 1 evaluation") }}>
-                                <Image source={require("../../assets/images/StarFull.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/StarFull.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("Pressed 2 evaluation") }}>
-                                <Image source={require("../../assets/images/StarFull.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/StarFull.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("Pressed 3 half-evaluation") }}>
-                                <Image source={require("../../assets/images/StarHalf.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/StarHalf.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("Pressed 4 no-evaluation") }}>
-                                <Image source={require("../../assets/images/StarEmpty.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/StarEmpty.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("Pressed 5 no-evaluation") }}>
-                                <Image source={require("../../assets/images/StarEmpty.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/StarEmpty.png")} style={{ height: 24, width: 24, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -133,9 +134,9 @@ export default function EventDetails({ route, navigation }) {
                         <View style={{ width: 50, alignItems: 'center', marginTop: 40, marginBottom: 50, marginLeft: 20 }}>
                             <Text style={[styleSelected.textNormal16, { fontWeight: '700' }]}>Price</Text>
                             <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                                <Image source={require("../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
-                                <Image source={require("../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
-                                <Image source={require("../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/euro.png")} style={{ height: 19, width: 17, alignItems: 'center', justifyContent: 'center', }} resizeMode='contain' />
                             </View>
                         </View>
                         <View style={{ display: 'flex', marginRight: 20, marginLeft: 'auto', marginTop: -90, width: '50%' }}>

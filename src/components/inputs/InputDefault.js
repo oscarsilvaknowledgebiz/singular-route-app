@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Animated, Text, View, useColorScheme } from "react-native";
 import { TextInput } from "react-native";
-import style from "../../style/Style";
-import styleDark from "../../style/StyleDark";
+import style from "../../../style/Style";
+import styleDark from "../../../style/StyleDark";
 import { Fontisto } from "@expo/vector-icons";
 import MaskInput from "react-native-mask-input";
 
@@ -19,7 +19,7 @@ export default function InputDefault({
 }) {
     const [focus, setFocus] = useState(false);
     const [showSecureText, setShowSecureText] = useState(true);
-    const colors = require("../../style/Colors.json");
+    const colors = require("../../../style/Colors.json");
     let colorScheme = useColorScheme();
     var styleSelected = colorScheme == "light" ? style : styleDark;
 

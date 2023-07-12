@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { SafeAreaView, StatusBar, Appearance, useColorScheme, Platform, KeyboardAvoidingView, View, Text, TouchableOpacity, Image, Switch } from 'react-native'
-import style from '../../style/Style'
-import styleDark from '../../style/StyleDark'
+import style from '../../../style/Style'
+import styleDark from '../../../style/StyleDark'
 import * as NavigationBar from 'expo-navigation-bar'
-import * as SplashScreen from 'expo-splash-screen';
-import Loader from '../components/Loader'
-import InputDefault from '../components/InputDefault'
-import ButtonPrimary from '../components/ButtonPrimary'
+
+import Loader from '../../components/loader/Loader'
+import InputDefault from '../../components/inputs/InputDefault'
+import ButtonPrimary from '../../components/buttons/ButtonPrimary'
 
 export default function Login({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -15,7 +15,7 @@ export default function Login({ route, navigation }) {
     const [remember, setRemember] = useState(true)
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
-    var colors = require('../../style/Colors.json')
+    var colors = require('../../../style/Colors.json')
 
     useEffect(() => {
         console.log('OPEN', Login.name, 'SCREEN')
@@ -70,13 +70,13 @@ export default function Login({ route, navigation }) {
                         <Text style={styleSelected.textNormal24}>Or Sign in with</Text>
                         <View style={{ flexDirection: "row", height: 100, justifyContent: "space-evenly", alignItems: "center", width: "80%", alignSelf: "center" }}>
                             <TouchableOpacity onPress={() => { console.log("PRESS IN FACEBOOK") }}>
-                                <Image source={require("../../assets/images/ic_baseline-facebook.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/ic_baseline-facebook.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("PRESS IN APPLE") }}>
-                                <Image source={require("../../assets/images/ic_baseline-apple.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/ic_baseline-apple.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { console.log("PRESS IN GOOGLE") }}>
-                                <Image source={require("../../assets/images/Vector.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
+                                <Image source={require("../../../assets/images/Vector.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
                             </TouchableOpacity>
                         </View>
                     </View>

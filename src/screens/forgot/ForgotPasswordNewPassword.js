@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { SafeAreaView, StatusBar, Appearance, useColorScheme, Platform, KeyboardAvoidingView, View, Text } from 'react-native'
-import style from '../../style/Style'
-import styleDark from '../../style/StyleDark'
+import style from '../../../style/Style'
+import styleDark from '../../../style/StyleDark'
 import * as NavigationBar from 'expo-navigation-bar'
-import * as SplashScreen from 'expo-splash-screen';
-import Loader from '../components/Loader'
-import InputDefault from '../components/InputDefault';
-import ButtonPrimary from '../components/ButtonPrimary'
+
+import InputDefault from '../../components/inputs/InputDefault';
+import Loader from '../../components/loader/Loader'
+import ButtonPrimary from '../../components/buttons/ButtonPrimary'
+
 
 export default function ForgotPasswordNewPassword({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -14,7 +15,7 @@ export default function ForgotPasswordNewPassword({ route, navigation }) {
     const [confirmnewpassword, setConfirmnewpassword] = useState("")
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
-    var colors = require('../../style/Colors.json')
+    var colors = require('../../../style/Colors.json')
 
     useEffect(() => {
         console.log('OPEN', ForgotPasswordNewPassword.name, 'SCREEN')

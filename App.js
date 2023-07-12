@@ -12,6 +12,7 @@ import ForgotPasswordEmail from './src/view/ForgotPasswordEmail';
 import ForgotPasswordCode from './src/view/ForgotPasswordCode';
 import ForgotPasswordNewPassword from './src/view/ForgotPasswordNewPassword';
 import EventDetails from './src/view/EventDetails';
+import Recommendation from './src/view/Recommendation';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,7 +32,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='TabHomeScreen' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='Recommendation' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={Register} options={{
           headerShown: true,
@@ -79,6 +80,47 @@ export default function App() {
           headerTitle: ""
         }} />
         <Stack.Screen name="BasicFilters" component={BasicFilters} options={{
+          headerShown: true,
+          headerTitle: ""
+        }} />
+<Stack.Screen name="Recommendation" component={Recommendation} options={{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           headerShown: true,
           headerTitle: ""
         }} />

@@ -10,6 +10,10 @@ const style = StyleSheet.create(
             fontSize: 16,
             fontWeight: 400
         },
+        textNormal20: {
+            fontSize: 20,
+            fontWeight: 700
+        },
         textNormal32: {
             fontSize: 32,
             fontWeight: 700
@@ -81,6 +85,29 @@ checkbox: {
             margin: 5
           },
 search_not_menu: {
+            width: 16,
+            height: 16
+        },
+search_not_menu: {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             width: 16,
             height: 16
         },
@@ -159,6 +186,7 @@ search_not_menu: {
             fontSize: 14
         },
         resetButton: {
+            backgroundColor: colors.BaseSlot1,
             height: 60,
             width: "30%",
             borderRadius: 10,

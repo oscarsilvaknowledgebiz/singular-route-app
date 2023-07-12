@@ -101,7 +101,7 @@ const EventCard = ({ selectedButton }) => {
             <View style={{ flex: 1 }}>
               <Text style={[styleSelected.textNormal16, { fontWeight: 700, marginLeft: 100 }]} numberOfLines={2}>{event.title}</Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 'auto',  zIndex: 1 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 'auto' }}>
               <TouchableOpacity onPress={() => handleLike(event)}>
                 <Image
                   style={[

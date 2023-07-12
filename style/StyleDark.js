@@ -10,6 +10,10 @@ const style = StyleSheet.create(
             fontSize: 16,
             fontWeight: 400
         },
+        textNormal20: {
+            fontSize: 20,
+            fontWeight: 700
+        },
         textNormal32: {
             fontSize: 32,
             fontWeight: 700
@@ -111,7 +115,15 @@ const style = StyleSheet.create(
             width: 10,
             height: 12
         },
-        heart_fav: {
+        heartButton: {
+            width: 18,
+            height: 16
+        },
+        shareButton: {
+            width: 18,
+            height: 18
+        },
+heart_fav: {
             width: 18,
             height: 16
         },
@@ -128,7 +140,54 @@ const style = StyleSheet.create(
             width: '100%',
             backgroundColor: '#E9E9E9',
             dotted: 9
-        }
+        },
+        stickyfooter: {
+            position: 'fixed'
+        },
+        container: {
+            backgroundColor: '#ffffff',
+            borderRadius: 8,
+            padding: 16,
+            marginVertical: 8,
+            shadowColor: '#000000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.1,
+            shadowRadius: 4,
+            elevation: 2,
+        },
+        title: {
+            fontSize: 18,
+            fontWeight: 'bold',
+            marginBottom: 8,
+        },
+        date: {
+            fontSize: 14,
+            marginBottom: 4,
+        },
+        location: {
+            fontSize: 14
+        },
+        resetButton: {
+            backgroundColor: colors.BaseSlot1,
+            height: 60,
+            width: "30%",
+            borderRadius: 10,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: 'auto'
+        },
+
+        dropdownContainer: {
+            backgroundColor: 'white',
+            width: 200, // Increase the width value as needed
+            maxWidth: '80%', // Optionally, you can use a percentage value instead of an absolute width
+            maxHeight: 724,
+            marginLeft: 'auto',
+            justifyContent: 'center', // Center the buttons vertically
+            alignItems: 'center', // Center the buttons horizontally
+            overflow: 'hidden',
+        },
 
     }
 )

@@ -23,7 +23,7 @@ function TabHomeScreen() {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={BasicFilters} options={{
         headerShown: true
-      }}/>
+      }} />
       <Tab.Screen name="Settings" component={BasicFilters} />
     </Tab.Navigator>
   )
@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='HiAgain' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='WelcomeScreen' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={Register} options={{
           headerShown: true,
@@ -59,19 +59,7 @@ export default function App() {
           headerShown: true,
           headerTitle: ""
         }} />
-<Stack.Screen name="AdvancedFilter" component={AdvancedFilter} options={{
-
-
-
-
-
-
-
-
-
-
-
-
+        <Stack.Screen name="AdvancedFilter" component={AdvancedFilter} options={{
           headerShown: true,
           headerTitle: ""
         }} />
@@ -84,126 +72,11 @@ export default function App() {
           headerShown: true,
           headerTitle: ""
         }} />
-<Stack.Screen name="Recommendation" component={Recommendation} options={{
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <Stack.Screen name="Recommendation" component={Recommendation} options={{
           headerShown: true,
           headerTitle: ""
         }} />
-<Stack.Screen name="HiAgain" component={HiAgain} options={{
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <Stack.Screen name="HiAgain" component={HiAgain} options={{
           headerShown: true,
           headerTitle: ""
         }} />

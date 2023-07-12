@@ -80,7 +80,7 @@ export default function Login({ route, navigation }) {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} />
+                    <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} event={() => navigation.navigate("HiAgain")}/>
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>

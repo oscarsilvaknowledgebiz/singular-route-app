@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './src/view/WelcomeScreen';
 import Register from './src/view/Register';
 import Login from './src/view/Login';
+import HiAgain from './src/view/HiAgain';
 import BasicFilters from './src/view/BasicFilters'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AdvancedFilter from './src/view/AdvancedFilter';
@@ -32,7 +33,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Recommendation' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='HiAgain' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="Register" component={Register} options={{
           headerShown: true,
@@ -84,6 +85,88 @@ export default function App() {
           headerTitle: ""
         }} />
 <Stack.Screen name="Recommendation" component={Recommendation} options={{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          headerShown: true,
+          headerTitle: ""
+        }} />
+<Stack.Screen name="HiAgain" component={HiAgain} options={{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

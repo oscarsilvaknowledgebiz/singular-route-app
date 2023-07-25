@@ -10,7 +10,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import EventCard from '../components/EventCard';
 import SelectableButton from '../components/SelectableButton';
 import PopularEvent from '../components/PopularEvent';
-import {UserService} from "singular-route-client/client"
 
 export default function HomeScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -232,9 +231,10 @@ export default function HomeScreen({ route, navigation }) {
        
             </View>
 
-            <View style={{ backgroundColor: '#FFFFFF', marginTop: 20, marginLeft: 10,  borderRadius: 5 }}>
-              <PopularEvent styleSelected={styleSelected} />
-            </View>
+            <View style={{ backgroundColor: '#FFFFFF', marginTop: 20, marginLeft: 10, borderRadius: 5, zIndex: 1 }}>
+  <PopularEvent styleSelected={styleSelected} />
+</View>
+
 
             <ScrollView style={{ marginLeft: 20, marginTop: 0, zIndex: -5 }}>
               <View style={{ marginLeft: -20, marginBottom: 20, height: '100%' }}>

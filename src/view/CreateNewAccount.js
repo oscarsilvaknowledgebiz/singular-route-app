@@ -23,6 +23,7 @@ import Constants from 'expo-constants';
 import * as ImagePicker from 'expo-image-picker';
 import ProfilePictureScreen from '../components/ProfilePictureScreen';
 import DisplayNameScreen from '../components/DisplayNameScreen';
+import {UserService} from 'singular-route-client/client'
 
 export default function CreateNewAccount({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true);
@@ -87,6 +88,24 @@ export default function CreateNewAccount({ route, navigation }) {
         return <Loader />;
     }
 
+    function RegisterUser(){
+        console.log("SERVICE")
+        UserService.createUserByIdUser({
+            email: email, 
+            name: name,
+            password: password,
+            address: {
+                street: "",
+                city: "",
+                country: "",
+                postal_code: "",
+                door_number: ""
+            }
+        }).then((response) => {
+          console.log(response.data)
+        }).catch((error) => {console.error(error)})
+    }
+
     return (
         <SafeAreaView style={[{ flex: 1, backgroundColor: colors.BaseSlot3 }]} onLayout={onLayoutRootView}>
             <StatusBar
@@ -138,7 +157,9 @@ export default function CreateNewAccount({ route, navigation }) {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <ButtonPrimary title={'Save'} colorText={colors.BaseSlot3} />
+                        <ButtonPrimary title={'Save'} colorText={colors.BaseSlot3} onPress={() => {
+                            RegisterUser()
+                        }}/>
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>

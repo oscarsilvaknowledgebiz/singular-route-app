@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import Loader from '../components/Loader'
 import InputDefault from '../components/InputDefault'
 import ButtonPrimary from '../components/ButtonPrimary'
+import {UserService} from 'singular-route-client/client'
 
 export default function Register({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -44,6 +45,24 @@ export default function Register({ route, navigation }) {
             <Loader />
         );
     }
+
+    function RegisterUser(){
+        UserService.createUserByIdUser({
+            email: email, 
+            name: name,
+            password: password,
+            address: {
+                street: "",
+                city: "",
+                country: "",
+                postal_code: "",
+                door_number: ""
+            }
+        }).then((response) => {
+          console.log(response.data)
+        }).catch((error) => {console.error(error)})
+    }
+  
     return (
         <SafeAreaView style={[{ flex: 1, backgroundColor: colors.BaseSlot3 }]} onLayout={onLayoutRootView}>
             <StatusBar translucent={true} backgroundColor={'transparent'} barStyle={colorScheme === 'light' ? 'dark-content' : 'light-content'} />

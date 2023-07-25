@@ -9165,6 +9165,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+singular-route-client@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/singular-route-client/-/singular-route-client-1.0.0.tgz"
+  integrity sha512-n9A21KFSQXSG5bN+ALbBW5Clh6yFFexJxCG/DnRhOB6JbivX/5PSrPnEqKUdRuastADBkHhr2lOp14CKIGteUw==
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"

@@ -7,6 +7,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import Loader from '../components/Loader'
 import InputDefault from '../components/InputDefault'
 import ButtonPrimary from '../components/ButtonPrimary'
+import {UserService} from 'singular-route-client/client'
+
 
 export default function Login({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -43,6 +45,13 @@ export default function Login({ route, navigation }) {
             <Loader />
         );
     }
+
+    function LoginUser(){
+        UserService.getUserDataByIdUser(email, password).then((response) => {
+          console.log(response.data)
+        }).catch((error) => {console.error(error)})
+    }
+  
     return (
         <SafeAreaView style={[{ flex: 1, backgroundColor: colors.BaseSlot3 }]} onLayout={onLayoutRootView}>
             <StatusBar translucent={true} backgroundColor={'transparent'} barStyle={colorScheme === 'light' ? 'dark-content' : 'light-content'} />
@@ -80,7 +89,10 @@ export default function Login({ route, navigation }) {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} />
+                    <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} onPress={() => {
+                            console.log("teste")
+                            LoginUser()
+                        }} />
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>

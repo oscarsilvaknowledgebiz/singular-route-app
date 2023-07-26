@@ -90,7 +90,7 @@ export default function Login({ route, navigation }) {
                         </View>
                     </View>
                     <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} onPress={() => {
-                            console.log("teste")
+                            console.log("LoginDone")
                             LoginUser()
                         }} />
                 </View>

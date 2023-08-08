@@ -78,11 +78,11 @@ export default function ProfileScreen1({ route, navigation }) {
         <View style={{ backgroundColor: colors.BaseSlot3, flex: 1 }}>
           <Text style={[styleSelected.textNormal20, {marginLeft: 20}]}>Tell us a little bit about yourself</Text>
           <View style={{ flex: 0.4, justifyContent: "space-evenly", marginTop: 30 }}>
-            <InputDefault placeholder={"Lisboa, Portugal"} input={homeadress} setInput={setHomeadress} />
+            <InputDefault placeholder={"Home address"} input={homeadress} setInput={setHomeadress} />
             <InputDefault placeholder={"Nationality"} input={nationality} setInput={setNationality} />
-            <InputDefault placeholder={"Birth Day"} input={birthday} setInput={setBirthday} keyboardType="numeric" />
+            <InputDefault placeholder={"Birth Date"} input={birthday} setInput={setBirthday} keyboardType="numeric" />
             <Text style={[styleSelected.textNormal16, { marginLeft: 20, marginTop: 40 }]}>Gender</Text>
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20, marginTop: 20 }}>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 120, marginTop: 20, marginLeft: 20 }}>
               <RadioButtonSelectableButton
                 label="Male"
                 onPress={() => handleButtonPress("Male")}

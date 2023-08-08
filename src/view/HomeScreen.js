@@ -209,7 +209,7 @@ export default function HomeScreen({ route, navigation }) {
       top: 70,
       left: 20,
       right: 20,
-      zIndex: 999,
+      zIndex: 99999,
       height: 200,
       width: 200,
       backgroundColor: 'white',
@@ -231,7 +231,7 @@ export default function HomeScreen({ route, navigation }) {
        
             </View>
 
-            <View style={{ backgroundColor: '#FFFFFF', marginTop: 20, marginLeft: 10, borderRadius: 5, zIndex: 1 }}>
+            <View style={{ backgroundColor: '#FFFFFF', marginTop: 20, marginLeft: 10, borderRadius: 5, zIndex: 1, opacity: 50 }}>
   <PopularEvent styleSelected={styleSelected} />
 </View>
 

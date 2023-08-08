@@ -7,7 +7,8 @@ const PopularEvent = ({ styleSelected }) => {
   const colors = require('../../style/Colors.json');
   const [liked, setLiked] = useState(false);
 
-  const handleLike = () => {
+  const handleLike = (event) => {
+    event.stopPropagation(); // Prevent touch event propagation to parent TouchableOpacity
     setLiked(!liked);
     console.log(liked ? 'Unfavorited event: Museu Berardo' : 'Favorited event: Museu Berardo');
   };

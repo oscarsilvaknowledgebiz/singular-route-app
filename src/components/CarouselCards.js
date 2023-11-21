@@ -6,7 +6,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel"
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from './CarouselCardItem'
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function CarouselCards({}) {
+export default function CarouselCards({nextScreen}) {
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
     var colors = require('../../style/Colors.json')
@@ -55,7 +55,7 @@ export default function CarouselCards({}) {
             inactiveSlideOpacity={0}
             inactiveSlideScale={0}
           />
-          <TouchableOpacity onPress={() => {isCarousel.current.snapToNext()}} style={{
+          <TouchableOpacity onPress={() => {index !== 2 ? isCarousel.current.snapToNext() : nextScreen()}} style={{
             marginTop: 108,
             width: 317,
             alignItems: 'center',

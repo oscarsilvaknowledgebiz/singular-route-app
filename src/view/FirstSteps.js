@@ -50,7 +50,7 @@ export default function FirstSteps({ route, navigation }) {
                 keyboardVerticalOffset={Platform.OS == 'android' ? -150 : -150}
             >
                 <View style={[styleSelected.backgroundPrimary, {flex: 1, marginTop: 50, backgroundColor:"white"}]}>
-                    <CarouselCards/>
+                    <CarouselCards nextScreen={() => navigation.navigate("WelcomeScreen")} />
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>

@@ -21,11 +21,12 @@ const style = StyleSheet.create(
         button: {
             backgroundColor: colors.BaseSlot1,
             height: 60,
-            width: "100%",
+            width: "90%",
             borderRadius: 10,
             alignSelf: "center",
             justifyContent: "center",
             alignItems: "center"
+
         },
         buttonTrip: {
             backgroundColor: colors.BaseSlot2,

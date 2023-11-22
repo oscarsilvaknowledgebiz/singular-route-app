@@ -40,7 +40,7 @@ const style = StyleSheet.create(
             width: "100%",
             borderRadius: 10,
             alignSelf: "center",
-            borderColor: colors.BaseSlot4,
+            borderColor: "#7C7C7C",
             borderWidth: 1,
             justifyContent: "center",
             alignItems: "center"

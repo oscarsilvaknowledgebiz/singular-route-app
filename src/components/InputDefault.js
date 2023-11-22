@@ -127,7 +127,7 @@ export default function InputDefault({
                 maskInput == undefined && (
                     <TextInput
                         value={input}
-                        keyboardType={keyboardType}
+                        keyboardType={"default"}
                         secureTextEntry={secureTextEntry ? showSecureText : false}
                         onFocus={(value) => {
                             typeof (onFocus) == "function" ? onFocus(value) : null

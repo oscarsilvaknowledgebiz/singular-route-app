@@ -75,7 +75,7 @@ export default function WelcomeScreen({ route, navigation }) {
                             <ButtonSecondary
                                 title={"No account yet? "}
                                 title2={"Sign up"}
-                                colorText={colors.BaseSlot4}
+                                colorText={"#7C7C7C"}
                                 colorText2={colors.BaseSlot1}
                                 event={() => navigation.navigate("Register")} />
                         </View>

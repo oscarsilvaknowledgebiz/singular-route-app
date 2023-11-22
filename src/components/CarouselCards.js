@@ -21,7 +21,7 @@ export default function CarouselCards({nextScreen}) {
       const isCarousel = useRef(0)
 
     return (
-        <View>
+        <View style={{flex:1}}>
           <TouchableOpacity style={{position:"absolute", marginLeft: 32, marginTop:19}} onPress={() => {isCarousel.current.snapToItem(index-1)}}>
             <MaterialCommunityIcons  name="arrow-left" size={32} />
             </TouchableOpacity>
@@ -54,9 +54,11 @@ export default function CarouselCards({nextScreen}) {
             useScrollView={true}
             inactiveSlideOpacity={0}
             inactiveSlideScale={0}
+            slideStyle={{flex:1}}
+            containerCustomStyle={{flex:1}}
           />
           <TouchableOpacity onPress={() => {index !== 2 ? isCarousel.current.snapToNext() : nextScreen()}} style={{
-            marginTop: 108,
+            bottom:10,
             width: 317,
             alignItems: 'center',
             alignSelf:"center",

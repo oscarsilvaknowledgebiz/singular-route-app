@@ -11,6 +11,7 @@ import {UserService} from 'singular-route-client/client'
 import * as AppleAuthentication from "expo-apple-authentication"
 import * as jwtDecode from "jwt-decode"
 import { CommonActions } from '@react-navigation/native'
+import Toast from 'react-native-toast-message'
 
 
 export default function Login({ route, navigation }) {
@@ -49,19 +50,32 @@ export default function Login({ route, navigation }) {
         );
     }
 
-    function LoginUser(){
-        UserService.getUserDataByIdUser(email, password).then((response) => {
-            // gravar em redux ou token?
-            console.log(response.data)
+    const showToast = (msg, type = "success") => {
+        // Types: success, error, info
+        Toast.show({ type: type, text1: msg, position: 'bottom' })
+    }
 
-            // navigation.dispatch(
-            //     CommonActions.reset({
-            //         index: 0,
-            //         route: [{ name: "", params: {} }]
-            //     })
-            // )
-            
-        }).catch((error) => {console.error(error)})
+    function LoginUser(){
+        if (email && password) {
+            UserService.getUserDataByIdUser(email, password).then((response) => {
+                // gravar em redux ou token?
+                console.log(response.data)
+    
+                // navigation.dispatch(
+                //     CommonActions.reset({
+                //         index: 0,
+                //         route: [{ name: "", params: {} }]
+                //     })
+                // )
+                
+            }).catch((error) => {
+                console.error(error)
+                showToast("An error has occured while trying to sign in.", "error")
+            })
+        }
+        else {
+            showToast("Please fill all the fields.", "error")
+        }
     }
   
     return (
@@ -81,6 +95,9 @@ export default function Login({ route, navigation }) {
                     <View style={{ flex: .4, justifyContent: "space-evenly" }}>
                         <InputDefault placeholder={"Email address"} input={email} setInput={setEmail} />
                         <InputDefault secureTextEntry={true} placeholder={"Password"} input={password} setInput={setPassword} />
+                        <TouchableOpacity style={{ height: 30 }} onPress={() => { navigation.navigate("RecoverPassword") }}>
+                            <Text style={[styleSelected.textNormal12, { alignSelf: "flex-end",  color: colors.BaseSlot2, fontWeight: 600, marginRight: 10 }]}>Forgot password?</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={{ flex: 1, justifyContent: "space-evenly" }}>
                     <ButtonPrimary title={"Sign in"} colorText={colors.BaseSlot3} event={() => {
@@ -92,7 +109,7 @@ export default function Login({ route, navigation }) {
                             {/* <TouchableOpacity onPress={() => { console.log("PRESS IN APPLE") }}>
                                 <Image source={require("../../assets/images/ic_baseline-apple.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
                             </TouchableOpacity> */}
-                            <AppleAuthentication.AppleAuthenticationButton style={{ width: 150, height:60, justifyContent: "center", alignItems: "center" }}
+                            <AppleAuthentication.AppleAuthenticationButton style={{ width: 150, height:50, justifyContent: "center", alignItems: "center" }}
                                 buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                                 buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}                                
                                 cornerRadius={30}

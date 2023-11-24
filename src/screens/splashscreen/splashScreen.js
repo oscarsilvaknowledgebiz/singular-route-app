@@ -16,7 +16,7 @@ export default () => {
           });
         } else {
           navigation.reset({
-            routes: [{ name: 'Planyou' }]
+            routes: [{ name: 'AboutOne' }]
           });
         }
       } catch (error) {

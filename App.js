@@ -10,6 +10,7 @@ import ForgotPasswordCode from './src/view/ForgotPasswordCode';
 import ForgotPasswordNewPassword from './src/view/ForgotPasswordNewPassword';
 import EventDetails from './src/view/EventDetails';
 import FirstSteps from './src/view/FirstSteps';
+import UserScreen from './src/view/user/UserScreen';
 import CustomHeaderLeft from './src/components/CustomHeaderLeft';
 import Toast from 'react-native-toast-message';
 
@@ -51,6 +52,7 @@ export default function App() {
             headerLeft: () => <CustomHeaderLeft navigation={navigation} />,
             headerTitle: ""
           })} />
+          <Stack.Screen name="UserScreen" component={UserScreen} />
           <Stack.Screen name="FirstSteps" component={FirstSteps} />
         </Stack.Navigator>
       </NavigationContainer>

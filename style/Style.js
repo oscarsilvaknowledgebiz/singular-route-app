@@ -76,7 +76,28 @@ const style = StyleSheet.create(
         },
         ScrollView:{
             marginHorizontal: 0
-        }
+        },
+        avatar: {
+            paddingTop: 20,
+            height: 75,
+            width: 75,
+            borderRadius: 100,
+            padding: 20,
+          },
+          plusCircleAvatar: {
+            borderRadius:30,
+            padding:5,
+            position:"absolute",
+            left:"54%",
+            top:"65%", 
+            position: "absolute",
+            backgroundColor: colors.BaseSlot3,
+            shadowOffset: {
+                height: 3,
+                width: 2
+            },
+            shadowColor:"#878787",
+          },
     }
 )
 

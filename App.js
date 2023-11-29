@@ -13,6 +13,7 @@ import FirstSteps from './src/view/FirstSteps';
 import UserScreen from './src/view/user/UserScreen';
 import CustomHeaderLeft from './src/components/CustomHeaderLeft';
 import Toast from 'react-native-toast-message';
+import FavoritesScreen from './src/view/favorites/FavoritesScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ export default function App() {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='FirstSteps' screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName='UserScreen' screenOptions={{ headerShown: false }}>
           <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
           <Stack.Screen name="Register" component={Register} options={({navigation, route}) => ({
             headerShown: true,
@@ -53,6 +54,7 @@ export default function App() {
             headerTitle: ""
           })} />
           <Stack.Screen name="UserScreen" component={UserScreen} />
+          <Stack.Screen name="FavoritesScreen" component={FavoritesScreen} />
           <Stack.Screen name="FirstSteps" component={FirstSteps} />
         </Stack.Navigator>
       </NavigationContainer>

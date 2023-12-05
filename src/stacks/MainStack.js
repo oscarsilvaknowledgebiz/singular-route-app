@@ -2,8 +2,9 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Splashscreen from "../screens/splashscreen/splashScreen";
-import Welcome from "../screens/welcome/welcomeScreen";
-import Planyouscreen from "../screens/planyou/planyouScreen";
+import Visited from "../screens/visitscreen/visitedScreen";
+import { Text, View } from "react-native";
+import HeaderComp from "../components/header/headerComp";
 
 
 const Stack = createStackNavigator();
@@ -16,10 +17,20 @@ export default () => (
     }}
   >
     <Stack.Screen name="Splashscreen" component={Splashscreen} />
-    <Stack.Screen name="Welcome" component={Welcome} />
-    <Stack.Screen name="Planyou" component={Planyouscreen} />
+    <Stack.Screen name="VisitedPlace" component={Visited}
+      options={{
+        headerShown: true,
+        header: () => {
+          return (
+            <View style={{height: 120}}>
+                <HeaderComp title={"My Saved Routes"}/>
+            </View>
+          )
+        }
+      }}
+    />
 
-   
+
   </Stack.Navigator>
 
 )

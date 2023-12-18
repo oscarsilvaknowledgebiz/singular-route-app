@@ -62,7 +62,7 @@ export default function WelcomeScreen({ route, navigation }) {
                             style={styleSelected.WelcomeImage}
                             source={require('../../assets/images/WelcomeImage.png')}
                             placeholder="image"
-                            contentFit="cover"
+                            // resizeMode="contain"
                             transition={1000}
                         />
                     </View>

@@ -12,7 +12,9 @@ import * as AppleAuthentication from "expo-apple-authentication"
 import * as jwtDecode from "jwt-decode"
 import { CommonActions } from '@react-navigation/native'
 import Toast from 'react-native-toast-message'
+import { insertUser } from '../features/user/user'
 
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Login({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -22,6 +24,8 @@ export default function Login({ route, navigation }) {
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
     var colors = require('../../style/Colors.json')
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         console.log('OPEN', Login.name, 'SCREEN')
@@ -57,16 +61,16 @@ export default function Login({ route, navigation }) {
 
     function LoginUser(){
         if (email && password) {
-            UserService.getUserDataByIdUser(email, password).then((response) => {
-                // gravar em redux ou token?
-                console.log(response.data)
+            UserService.getUserDataByIdUser(email.toLowerCase(), password).then((response) => {
+                
+                dispatch(insertUser(response.data))
     
-                // navigation.dispatch(
-                //     CommonActions.reset({
-                //         index: 0,
-                //         route: [{ name: "", params: {} }]
-                //     })
-                // )
+                navigation.dispatch(
+                    CommonActions.reset({
+                        index: 0,
+                        routes: [{ name: "HomeScreen" }]
+                    })
+                )
                 
             }).catch((error) => {
                 console.error(error)
@@ -109,7 +113,7 @@ export default function Login({ route, navigation }) {
                             {/* <TouchableOpacity onPress={() => { console.log("PRESS IN APPLE") }}>
                                 <Image source={require("../../assets/images/ic_baseline-apple.png")} style={{ height: 45, width: 45 }} resizeMode='contain' />
                             </TouchableOpacity> */}
-                            <AppleAuthentication.AppleAuthenticationButton style={{ width: 150, height:50, justifyContent: "center", alignItems: "center" }}
+                            <AppleAuthentication.AppleAuthenticationButton style={{ width: 210, height:50, justifyContent: "center", alignItems: "center" }}
                                 buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
                                 buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}                                
                                 cornerRadius={30}

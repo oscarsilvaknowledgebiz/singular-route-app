@@ -12,6 +12,9 @@ import * as AppleAuthentication from "expo-apple-authentication"
 import * as jwtDecode from "jwt-decode"
 import { CommonActions } from '@react-navigation/native'
 import Toast from 'react-native-toast-message'
+import { insertUser } from '../features/user/user'
+
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Register({ route, navigation }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -22,6 +25,8 @@ export default function Register({ route, navigation }) {
     let colorScheme = useColorScheme()
     var styleSelected = colorScheme == 'light' ? style : styleDark
     var colors = require('../../style/Colors.json')
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         console.log('OPEN', Register.name, 'SCREEN')
@@ -62,7 +67,7 @@ export default function Register({ route, navigation }) {
             }
             else {
                 UserService.createUserByIdUser({
-                    email: email, 
+                    email: email.toLowerCase(), 
                     name: name,
                     password: password,
                     address: {
@@ -73,6 +78,21 @@ export default function Register({ route, navigation }) {
                         door_number: ""
                     }
                 }).then((response) => {
+                    UserService.getUserDataByIdUser(email.toLowerCase(), password).then(response => {
+                
+                        dispatch(insertUser(response.data))
+            
+                        navigation.dispatch(
+                            CommonActions.reset({
+                                index: 0,
+                                routes: [{ name: "HomeScreen" }]
+                            })
+                        )
+                        
+                    }).catch((error) => {
+                        console.error(error)
+                        showToast("An error has occured while trying to sign in.", "error")
+                    })
                     console.log(response.data)
                 }).catch((error) => {
                     showToast("An error has occurred while creating account.", "error")
@@ -106,7 +126,7 @@ export default function Register({ route, navigation }) {
                     <ButtonPrimary title={"Sign up"} event={() => RegisterUser()} colorText={colors.BaseSlot3} />
                     <Text style={[styleSelected.textNormal14, {justifyContent:"center", alignItems:"center", textAlign:"center", fontWeight:"bold"}]}>Or</Text>
                         <View style={{ justifyContent: "space-evenly", alignItems: "center", width: "80%", alignSelf: "center" }}>
-                        <AppleAuthentication.AppleAuthenticationButton style={{ width: 150, height:50, justifyContent: "center", alignItems: "center" }}
+                        <AppleAuthentication.AppleAuthenticationButton style={{ width: 210, height:50, justifyContent: "center", alignItems: "center" }}
                                 buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_UP}
                                 buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}                                
                                 cornerRadius={30}
@@ -120,7 +140,7 @@ export default function Register({ route, navigation }) {
                                       }                                      
                                       ).then((data) => { 
                                         let tokenData = jwtDecode.default(data.identityToken)
-                                        let email = tokenData.email
+                                        let email = tokenData.email.toLowerCase()
                                         console.log(tokenData)
                                         // UserService.getAllUsers().then((res) => {
                                         //     console.log(res.data)

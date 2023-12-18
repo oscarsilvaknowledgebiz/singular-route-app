@@ -15,7 +15,8 @@ const CarouselCardItem = ({ item, index }) => {
       {(index === 0) ? <>
       <Image
       source={ item.img }
-      style={[{width: 185, height: 253, alignSelf:"center"}]}
+      resizeMode="cover"
+      style={[{width: 305, height: 253, alignSelf:"center"}]}
     />
     <Text style={{fontSize: 24, fontWeight: 600, marginTop: 65, alignSelf:"center"}}>First steps</Text>
     <Text style={{fontSize: 12, marginTop: 19, alignSelf:"center"}}>After completing these simple steps, you will be able to discover the best routes and have the best experience!</Text>
@@ -26,6 +27,7 @@ const CarouselCardItem = ({ item, index }) => {
     <Text style={{fontSize: 12, marginTop: 13, alignSelf:"center"}}>To ensure that you will enjoy the best possible time during your stay, we just need your permission to track your location.</Text>
       <Image
       source={ item.img }
+      resizeMode="contain"
       style={[{width: "100%", height: 253, alignSelf:"center", marginTop: 81}]}
     />
     </> : <></>}
@@ -34,7 +36,8 @@ const CarouselCardItem = ({ item, index }) => {
     <View style={{height:500}}>
       <Image
       source={ item.img }
-      style={[{width: "100%", height: 253, alignSelf:"center"}]}
+      // resizeMode="contain"
+      style={[{width: 300, height: 273, alignSelf:"center"}]}
     />
     <Text style={{fontSize: 24, fontWeight: 600, marginTop: 65, alignSelf:"center"}}>Let's get started!</Text>
     <Text style={{fontSize: 12, marginTop: 19, alignSelf:"flex-start"}}><FontAwesome name='arrow-right' /> Create an account</Text>

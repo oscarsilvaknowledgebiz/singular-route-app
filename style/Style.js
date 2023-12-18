@@ -53,7 +53,8 @@ const style = StyleSheet.create(
         },
         WelcomeImage: {
             flex: 1,
-            width: '100%',
+            width: 400,
+            alignSelf:"center"
 
         },
 

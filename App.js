@@ -15,6 +15,7 @@ import Toast from 'react-native-toast-message';
 import FavoritesScreen from './src/view/favorites/FavoritesScreen';
 import HomeScreen from './src/view/home/HomeScreen';
 import EventDetails from './src/view/home/EventDetails';
+import PlanYourTrip from './src/view/plan-trip/PlanYourTrip';
 
 import store from "./src/redux/store";
 import { Provider, useDispatch, useSelector } from "react-redux";
@@ -33,12 +34,12 @@ export default function App() {
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="Register" component={Register} options={({ navigation, route }) => ({
               headerShown: true,
-              headerLeft: () => <CustomHeaderLeft navigation={navigation} />,
+              headerLeft: () => <CustomHeaderLeft navigation={navigation} title={"Create new account"} />,
               headerTitle: ""
             })} />
             <Stack.Screen name="Login" component={Login} options={({ navigation, route }) => ({
               headerShown: true,
-              headerLeft: () => <CustomHeaderLeft navigation={navigation} />,
+              headerLeft: () => <CustomHeaderLeft navigation={navigation} title={"Welcome back!"} />,
               headerTitle: ""
             })} />
             <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} options={({ navigation, route }) => ({
@@ -65,6 +66,11 @@ export default function App() {
             <Stack.Screen name="UserScreen" component={UserScreen} />
             <Stack.Screen name="FavoritesScreen" component={FavoritesScreen} />
             <Stack.Screen name="FirstSteps" component={FirstSteps} />
+            <Stack.Screen name="PlanYourTrip" component={PlanYourTrip} options={({ navigation, route }) => ({
+              headerShown: true,
+              headerLeft: () => <CustomHeaderLeft navigation={navigation} title={"Plan your Trip"} />,
+              headerTitle: ""
+            })} />
           </Stack.Navigator>
         </NavigationContainer>
         <Toast />

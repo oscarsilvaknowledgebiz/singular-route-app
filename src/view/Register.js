@@ -115,7 +115,7 @@ export default function Register({ route, navigation }) {
                 keyboardVerticalOffset={Platform.OS == 'android' ? -150 : -150}
             >
                 <View style={[{ flex: 1, backgroundColor: colors.BaseSlot3, marginTop: Platform.OS == "android" ? 0 : 0, marginLeft: 20, marginRight: 20 }]}>
-                    <Text style={styleSelected.textNormal24}>Create new account</Text>
+                    {/* <Text style={styleSelected.textNormal24}>Create new account</Text> */}
                     <View style={{ flex: 1, justifyContent: "space-evenly" }}>
                         <InputDefault placeholder={"Full name"} input={name} setInput={setName} />
                         <InputDefault placeholder={"Email address"} input={email} setInput={setEmail} />

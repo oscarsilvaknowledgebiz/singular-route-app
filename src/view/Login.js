@@ -92,7 +92,7 @@ export default function Login({ route, navigation }) {
                 keyboardVerticalOffset={Platform.OS == 'android' ? -150 : -150}
             >
                 <View style={[{ flex: 1, backgroundColor: colors.BaseSlot3, marginTop: Platform.OS == "android" ? 0 : 0, marginLeft: 20, marginRight: 20 }]}>
-                    <Text style={styleSelected.textNormal24}>Welcome back!</Text>
+                    {/* <Text style={styleSelected.textNormal24}>Welcome back!</Text> */}
                     <View style={{flex:1, justifyContent:"center", alignContent:"center", alignItems:"center" }}>
                         <Image source={require("../../assets/images/logo.png")} style={{height: 200, width: "90%" }} resizeMode='contain' />
                     </View>
